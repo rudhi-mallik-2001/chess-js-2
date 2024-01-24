@@ -1,0 +1,59 @@
+:root {
+  --black-tile: #000;
+  --white-tile: #fff;
+  --tile-size: 80px;
+  --bg-color: #0000ff;
+  --clicked-color: #add8e6;
+}
+
+@media all and (max-width: 450px) {
+  :root {
+    --tile-size: 50px;
+  }
+}
+
+@media all and (max-width: 376px) {
+  :root {
+    --tile-size: 35px;
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.board {
+  display: grid;
+  position: relative;
+  grid-template-columns: calc(0.25 * var(--tile-size)) calc(
+      8 * var(--tile-size)
+    );
+}
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(8, var(--tile-size));
+  grid-template-rows: repeat(8, var(--tile-size));
+  width: calc(8 * var(--tile-size));
+}
+
+.--black-tile {
+  background-color: var(--black-tile);
+}
+
+.--white-tile {
+  background-color: var(--white-tile);
+}
+
+.light-blue {
+  background-color: lightblue;
+}
+
+.dark-blue {
+  background-color: darkblue;
+  color: white;
+}
